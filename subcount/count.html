@@ -1,5 +1,5 @@
 <head>
-<title>test</title>
+<title id="pageTitle">Loading...</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-car.css" />
 
@@ -72,7 +72,7 @@ function dEnter() {
         var url1 = "https://www.googleapis.com/youtube/v3/channels?part=snippet&id=" + chanName + "&key=AIzaSyBoQovS0DUDy3JWgfKz2Wz_4BIAsPiP_oc";
         $.getJSON(url1, function(data) {
         	$('#name1').html('<a href="https://www.youtube.com/channel/' + data.items[0].id + '" target="_blank">' + data.items[0].snippet.title + '</a>');
-            
+            	$('pageTitle').html(data.items[0].snippet.title + ' | YouTube Live Subscriber Count');
             document.getElementById('pfp1').src = data.items[0].snippet.thumbnails.default.url;
             
         });
