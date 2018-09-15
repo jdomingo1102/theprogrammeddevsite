@@ -1,0 +1,52 @@
+<head>
+<title>test</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-car.css" />
+
+</head>
+
+
+<style>
+.count1 {
+	text-align: center;
+    font-family: sans-serif;
+    font-size: 70px;
+}
+.name1 {
+	text-align: center;
+    font-family: sans-serif;
+    font-size: 40px;
+}
+</style>
+
+
+<script>
+
+
+
+function dEnter() {
+
+	window.location.href = './count?c=' + document.getElementById('input1').value;
+
+}
+
+
+
+</script>
+
+
+<body style="font-family: sans-serif;">
+<center>
+
+<h1>YouTube Subscriber Count</h1>
+<h3>Enter your YouTube channel ID below.</h3>
+<h3><i>Example: <code>UCEh_anR7jaLSa-qWtqxluAg</code></i></h3>
+<input id="input1" placeholder="Channel ID">
+<button onclick="dEnter()">Show Subscribers</button>
+
+</center>
+</body>
+
+
+
+
