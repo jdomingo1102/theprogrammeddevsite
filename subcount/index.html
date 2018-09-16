@@ -11,8 +11,14 @@
 
 
 function dEnter() {
-
-	window.location.href = './count?c=' + document.getElementById('input1').value;
+	if (document.getElementById('input1').value.substring(0, 5) == "https") {
+	    var id = document.getElementById('input1').value.replace('https://www.youtube.com/channel/', '');
+	    window.location.href = './count?c=' + id;
+	}
+	if (document.getElementById('input1').value.substring(0, 5) !== "https") {
+	    var id = document.getElementById('input1').value;
+	    window.location.href = './count?c=' + id;
+	}
 
 }
 
