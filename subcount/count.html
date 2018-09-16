@@ -37,21 +37,16 @@ function parseURLParams(url) {
         query = url.slice(queryStart, queryEnd - 1),
         pairs = query.replace(/\+/g, " ").split("&"),
         parms = {}, i, n, v, nv;
-
     if (query === url || query === "") return;
-
     for (i = 0; i < pairs.length; i++) {
         nv = pairs[i].split("=", 2);
         n = decodeURIComponent(nv[0]);
         v = decodeURIComponent(nv[1]);
-
         if (!parms.hasOwnProperty(n)) parms[n] = [];
         parms[n].push(nv.length === 2 ? v : null);
     }
     return parms;
 }
-
-
 function addCommas(nStr) {
     nStr += '';
     var x = nStr.split('.');
@@ -63,13 +58,8 @@ function addCommas(nStr) {
     }
     return x1 + x2;
 }
-
-
 function dEnter() {
-
-
 	chanName = parseURLParams(window.location.href).c;
-
     setInterval( function() {
     
     var url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + chanName + "&key=AIzaSyBoQovS0DUDy3JWgfKz2Wz_4BIAsPiP_oc";
@@ -136,13 +126,11 @@ function dEnter() {
   text-align: left;
   display: block;
   position: absolute;
-  width: 80px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .odometer.odometer-auto-theme .odometer-digit .odometer-ribbon, .odometer.odometer-theme-default .odometer-digit .odometer-ribbon {
   display: block;
@@ -191,9 +179,9 @@ function dEnter() {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-
 .odometer.odometer-auto-theme, .odometer.odometer-theme-default {
-line-height: 1.2em;
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: 1.1em;
 }
 .odometer.odometer-auto-theme .odometer-value, .odometer.odometer-theme-default .odometer-value {
   text-align: center;
