@@ -73,7 +73,7 @@ function dEnter() {
         var url1 = "https://www.googleapis.com/youtube/v3/channels?part=snippet&id=" + chanName + "&key=AIzaSyBoQovS0DUDy3JWgfKz2Wz_4BIAsPiP_oc";
         $.getJSON(url1, function(data) {
         	$('#name1').html('' + data.items[0].snippet.title + '<br><script src="https://apis.google.com/js/platform.js"></script>
-<div class="g-ytsubscribe" data-channelid="' + data.items[0].id + 'UC3W7kW-A3N2N0aIBGp1u2-A" data-layout="default" data-count="default"></div>');
+<div class="g-ytsubscribe" data-channelid="' + data.items[0].id + '" data-layout="default" data-count="default"></div>');
             	$('#pageTitle').html(data.items[0].snippet.title + ' | YouTube Live Subscriber Count');
             document.getElementById('pfp1').src = data.items[0].snippet.thumbnails.default.url;
             
