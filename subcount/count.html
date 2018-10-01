@@ -72,8 +72,8 @@ function dEnter() {
         
         var url1 = "https://www.googleapis.com/youtube/v3/channels?part=snippet&id=" + chanName + "&key=AIzaSyBoQovS0DUDy3JWgfKz2Wz_4BIAsPiP_oc";
         $.getJSON(url1, function(data) {
-        	$('#name1').html('' + data.items[0].snippet.title + '<br>
-<div class="g-ytsubscribe" data-channelid="' + data.items[0].id + '" data-layout="default" data-count="default"></div>');
+		document.getElementById('subButton').data-channelid = data.items[0].snippet.id;
+        	$('#name1').html('' + data.items[0].snippet.title + '');
             	$('#pageTitle').html(data.items[0].snippet.title + ' | YouTube Live Subscriber Count');
             document.getElementById('pfp1').src = data.items[0].snippet.thumbnails.default.url;
             
@@ -91,6 +91,7 @@ function dEnter() {
 
 <img id="pfp1" src="https://via.placeholder.com/88x88" style="border-radius: 50%;">
 <h1 id="name1" class="name1">Loading...</h1>
+<div class="g-ytsubscribe" data-channelid="" data-layout="default" data-count="default" id="subButton"></div>
 <h1 id="odometer" class="count1 odometer"></h1>
 <a href="."><h3>Enter another channel ID</h3></a>
 <h3>You can bookmark this page for this specific user</h3>
