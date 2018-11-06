@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Encoder</title>
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800" rel="stylesheet">
+</head>
+<style>
+html,input,button {
+	font-family: 'Poppins', sans-serif;
+}
+</style>
+<script>
+letterA = [" ","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+function flip() {
+	var text = document.getElementById('flipInput').value.toUpperCase();
+    var flipped = '';
+    for (var i = 0; i < text.length+1; i++) { 
+        var add = text.substring(text.length-i, text.length-i+1);
+        for (var x = 0; x < letterA.length; x++) {
+            if (letterA[x] == add) {
+            	if (x == 0) {
+                	flipped += ' -';
+                } else {
+					flipped += x.toString() + '-';
+                }
+            }
+        }
+    }
+    var encoded = '';
+    
+    document.getElementById('result').innerHTML = flipped.substring(0, flipped.length-1);
+    
+}
+</script>
+<body>
+
+<input id="flipInput">
+<button onclick="flip()">Flip!</button><br><br>Output:<br>
+<textarea id="result" rows="20" cols="50" style="resize: none;" readonly></textarea>
+<p></p>
+
+</body>
+</html>
