@@ -20,7 +20,8 @@ function flip() {
             	if (x == 0) {
                 	flipped += ' -';
                 } else {
-					flipped += x.toString() + '-';
+					//flipped += x.toString() + '-';
+			                flipped += letterA[x];
                 }
             }
         }
@@ -32,7 +33,7 @@ function flip() {
 }
 </script>
 <body>
-
+	<p>Input:</p>
 <input id="flipInput">
 <button onclick="flip()">Flip!</button><br><br>Output:<br>
 <textarea id="result" rows="20" cols="50" style="resize: none;" readonly></textarea>
