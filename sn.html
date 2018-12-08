@@ -1,0 +1,45 @@
+<head>
+<title>Seconds in Notifications</title>
+<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+</head>
+
+
+<script>
+// request permission on page load
+document.addEventListener('DOMContentLoaded', function () {
+  if (!Notification) {
+    alert('Desktop notifications not available in your browser. Try Chromium.'); 
+    return;
+  }
+
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+});
+
+secondsPassed = 0;
+  
+setInterval(function(){secondsPassed++; notifyMe();}, 1000);
+  
+function notifyMe() {
+  document.getElementById('seconds').innerHTML = "" + secondsPassed + "";
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+  else {
+    var notification = new Notification(secondsPassed, {
+      icon: '',
+      body: "Seconds in Notifications",
+    });
+
+    notification.onclick = function () {
+          
+    };
+
+  }
+
+}
+</script>
+<body style="font-family: Bungee, cursive;">
+
+<h1 style="position: fixed; left: 0px; top: 20%; font-size: 100px; width: 100%; text-align: center;" id="seconds">0</h1>
+  
+</body>
