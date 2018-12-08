@@ -10,13 +10,17 @@ document.addEventListener('DOMContentLoaded', function () {
     Notification.requestPermission();
 });
 
+secondsPassed = 0;
+  
+setInterval(function(){secondsPassed++; notifyMe();}, 1000);
+  
 function notifyMe() {
   if (Notification.permission !== "granted")
     Notification.requestPermission();
   else {
-    var notification = new Notification('Logged in', {
+    var notification = new Notification('ANNOYING NOTIFICATION', {
       icon: '',
-      body: "You're logged in as user " + window.location.href.split('?user=')[1],
+      body: "" + secondsPassed + " seconds have passed",
     });
 
     notification.onclick = function () {
@@ -27,4 +31,3 @@ function notifyMe() {
 
 }
 </script>
-<button onclick="notifyMe()">Notify me!</button>
