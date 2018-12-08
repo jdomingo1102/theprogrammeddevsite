@@ -15,7 +15,7 @@ secondsPassed = 0;
 setInterval(function(){secondsPassed++; notifyMe();}, 1000);
   
 function notifyMe() {
-  document.write("" + secondsPassed + " seconds have passed<br>");
+  document.body.innerHTML = "" + secondsPassed + " seconds have passed";
   if (Notification.permission !== "granted")
     Notification.requestPermission();
   else {
@@ -32,3 +32,6 @@ function notifyMe() {
 
 }
 </script>
+<body>
+  
+</body>
