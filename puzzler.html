@@ -13,7 +13,7 @@ letterA = [" ","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","
 function flip() {
 	var text = document.getElementById('flipInput').value.toUpperCase();
     var flipped = '';
-    for (var i = 0; i < text.length; i++) { 
+    for (var i = 0; i < text.length + 1; i++) { 
         flipped += text.charAt(text.length - i);
     }
     var encoded = '';
