@@ -13,22 +13,12 @@ letterA = [" ","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","
 function flip() {
 	var text = document.getElementById('flipInput').value.toUpperCase();
     var flipped = '';
-    for (var i = 0; i < text.length+1; i++) { 
-        var add = text.substring(text.length-i, text.length-i+1);
-        for (var x = 0; x < letterA.length; x++) {
-            if (letterA[x] == add) {
-            	if (x == 0) {
-                	flipped += ' -';
-                } else {
-					//flipped += x.toString() + '-';
-			                flipped += letterA[x];
-                }
-            }
-        }
+    for (var i = 0; i < text.length; i++) { 
+        flipped += text.charAt(text.length - i);
     }
     var encoded = '';
     
-    document.getElementById('result').innerHTML = flipped.substring(0, flipped.length-1);
+    document.getElementById('result').innerHTML = flipped;
     
 }
 </script>
